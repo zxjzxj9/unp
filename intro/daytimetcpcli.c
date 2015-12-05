@@ -9,8 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 #define MAXLINE 255
 
+extern int err;
 
 int main(int argc,char **argv)
 {
@@ -27,6 +29,8 @@ int main(int argc,char **argv)
     if((sockfd = socket(AF_INET,SOCK_STREAM,0))<0)
     {
         printf("socket error\n");
+        char * mesg = strerror(errno);
+        printf("Mesg:%s\n",mesg); 
         exit(-1);
     }
 
