@@ -1,4 +1,9 @@
 //#include <linux/in.h>
+
+// Program to get nettime
+// possible server (provided by NIST): 
+// 98.175.203.200
+
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <stdio.h>
